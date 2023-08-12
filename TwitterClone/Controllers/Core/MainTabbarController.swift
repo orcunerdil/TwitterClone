@@ -30,10 +30,10 @@ class MainTabbarController: UITabBarController {
         
         
         vc3.tabBarItem.image = UIImage(systemName: "bell")
-        vc3.tabBarItem.image = UIImage(systemName: "bell.fill")
+        vc3.tabBarItem.selectedImage = UIImage(systemName: "bell.fill")
         
         vc4.tabBarItem.image = UIImage(systemName: "envelope")
-        vc4.tabBarItem.image = UIImage(systemName: "envelope.fill")
+        vc4.tabBarItem.selectedImage = UIImage(systemName: "envelope.fill")
         
         setViewControllers([vc1,vc2,vc3,vc4], animated: true)
     }

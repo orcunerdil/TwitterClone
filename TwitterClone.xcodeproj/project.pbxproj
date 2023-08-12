@@ -16,6 +16,7 @@
 		C3E5E3BD2A86CF1B00C01774 /* DirectMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E5E3BC2A86CF1B00C01774 /* DirectMessagesViewController.swift */; };
 		C3E5E3BF2A86CF3900C01774 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E5E3BE2A86CF3900C01774 /* SearchViewController.swift */; };
 		C3E5E3C12A86CF4700C01774 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E5E3C02A86CF4700C01774 /* NotificationsViewController.swift */; };
+		C3E5E3C42A86D96200C01774 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E5E3C32A86D96200C01774 /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C3E5E3BC2A86CF1B00C01774 /* DirectMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessagesViewController.swift; sourceTree = "<group>"; };
 		C3E5E3BE2A86CF3900C01774 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C3E5E3C02A86CF4700C01774 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		C3E5E3C32A86D96200C01774 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		C3E5E3A32A86CACC00C01774 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				C3E5E3C22A86D94200C01774 /* Views */,
 				C3E5E3B82A86CEDD00C01774 /* Controllers */,
 				C3E5E3A42A86CACC00C01774 /* AppDelegate.swift */,
 				C3E5E3A62A86CACC00C01774 /* SceneDelegate.swift */,
@@ -90,6 +93,14 @@
 				C3E5E3C02A86CF4700C01774 /* NotificationsViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		C3E5E3C22A86D94200C01774 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3E5E3C32A86D96200C01774 /* TweetTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				C3E5E3A72A86CACC00C01774 /* SceneDelegate.swift in Sources */,
 				C3E5E3C12A86CF4700C01774 /* NotificationsViewController.swift in Sources */,
 				C3E5E3BB2A86CF0800C01774 /* HomeViewController.swift in Sources */,
+				C3E5E3C42A86D96200C01774 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +331,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,6 +359,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
