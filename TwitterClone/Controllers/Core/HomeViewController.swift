@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Combine
 
 class HomeViewController: UIViewController {
 
+    private var viewModel = HomeViewViewModel()
+    private var subscription: Set<AnyCancellable> = []
+    
     private func configureNavigationBar() {
         let size: CGFloat = 36
         let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
@@ -40,7 +45,16 @@ class HomeViewController: UIViewController {
         timelineTableView.delegate = self
         timelineTableView.dataSource = self
         configureNavigationBar()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(didTapSignOut))
+        bindViews()
     }
+    
+    @objc func didTapSignOut(){
+       try? Auth.auth().signOut()
+        handleAuthentication()
+    }
+    
+   
     
     /*
      
@@ -53,12 +67,37 @@ class HomeViewController: UIViewController {
         timelineTableView.frame = view.frame
     }
     
+    private func handleAuthentication(){
+        if Auth.auth().currentUser == nil {
+            let vc = UINavigationController(rootViewController: OnboardingViewController())
+            vc.modalPresentationStyle = .fullScreen
+            present(vc,animated: false)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        handleAuthentication()
+        viewModel.retreiveUser()
+    }
+    
+    func completeUserOnboarding(){
+        
+        let vc = ProfileDataFormViewController()
+        present(vc, animated: true)
         
     }
     
+    func bindViews(){
+        viewModel.$user.sink { [weak self] user in
+            guard let user = user else {return}
+            if !user.isUserOnboarded {
+                self?.completeUserOnboarding()
+            }
+        }
+        .store(in: &subscription)
+    }
     
 }
 
